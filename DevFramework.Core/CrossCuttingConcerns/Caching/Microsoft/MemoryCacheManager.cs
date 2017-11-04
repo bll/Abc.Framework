@@ -10,7 +10,7 @@ namespace DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft
 {
     public class MemoryCacheManager : ICacheManager
     {
-        protected ObjectCache Cache { get; } = MemoryCache.Default;
+        protected ObjectCache Cache  => MemoryCache.Default;
 
         public T Get<T>(string key)
         {
@@ -25,6 +25,7 @@ namespace DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft
             }
 
             var policy = new CacheItemPolicy{AbsoluteExpiration = DateTime.Now+TimeSpan.FromMinutes(cacheTime)};
+            Cache.Add(new CacheItem(key, data), policy);
         }
 
         public bool IsAdd(string key)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DevFramework.Norhwind.Entities.Concrete;
 
 namespace DevFramework.Norhwind.MvcWebUI.Controllers
 {
@@ -26,5 +27,6 @@ namespace DevFramework.Norhwind.MvcWebUI.Controllers
 
             return View();
         }
+
     }
 }
