@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using DevFramework.Core.Aspects.Postsharp;
+using DevFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using DevFramework.Core.Aspects.Postsharp.CacheAspect;
 using DevFramework.Core.Aspects.Postsharp.LogAspect;
 using DevFramework.Core.Aspects.Postsharp.PerformanceAspect;
@@ -38,9 +39,10 @@ namespace DevFramework.Norhwind.Business.Concrate.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
-       // [LogAspect(typeof(DatabaseLogger))]
-       // [LogAspect(typeof(FileLogger))]
-       [PerformanceCounterAspect(2)]
+        // [LogAspect(typeof(DatabaseLogger))]
+        // [LogAspect(typeof(FileLogger))]
+        [PerformanceCounterAspect(10)]
+        [SecuredOperation(Roles = "Admin,Editor")]
         public List<Product> GetAll()
         {
             return _productDal.GetList();
@@ -68,6 +70,6 @@ namespace DevFramework.Norhwind.Business.Concrate.Managers
         }
 
 
-     
+
     }
 }
