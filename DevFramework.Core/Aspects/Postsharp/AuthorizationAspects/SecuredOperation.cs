@@ -16,7 +16,6 @@ namespace DevFramework.Core.Aspects.Postsharp.AuthorizationAspects
         {
             string[] roles = Roles.Split(',');
             bool isAuthorized = false;
-
             for (int i = 0; i < roles.Length; i++)
             {
                 if (System.Threading.Thread.CurrentPrincipal.IsInRole(roles[i]))
@@ -25,11 +24,11 @@ namespace DevFramework.Core.Aspects.Postsharp.AuthorizationAspects
                 }
             }
 
-
-            if (isAuthorized==false)
+            if (isAuthorized == false)
             {
                 throw new SecurityException("You are not authorized!");
             }
+
 
         }
     }

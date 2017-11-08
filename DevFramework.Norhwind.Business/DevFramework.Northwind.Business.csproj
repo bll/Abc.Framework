@@ -60,7 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrate\Managers\ProductManager.cs" />
+    <Compile Include="Concrate\Managers\UserManager.cs" />
     <Compile Include="DependencyResolves\Ninject\BusinessModule.cs" />
     <Compile Include="DependencyResolves\Ninject\ValidationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

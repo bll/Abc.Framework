@@ -53,7 +53,7 @@ namespace DevFramework.Core.CrossCuttingConcerns.Security.Web
         private string[] SetRoles(FormsAuthenticationTicket ticket)
         {
             string[] data = ticket.UserData.Split('|');
-            string[] roles = data[1].Split(new char[','], StringSplitOptions.RemoveEmptyEntries);
+            string[] roles = data[1].Split(new char[]{','}, StringSplitOptions.RemoveEmptyEntries);
             return roles;
         }
 
