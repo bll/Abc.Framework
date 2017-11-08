@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using DevFramework.Northwind.WebApi.MessageHandlers;
 
 namespace DevFramework.Northwind.WebApi
 {
@@ -10,6 +11,8 @@ namespace DevFramework.Northwind.WebApi
         public static void Register(HttpConfiguration config)
         {
             // Web API yapılandırması ve hizmetleri
+
+            config.MessageHandlers.Add(new AuthenticationHandler()); // token servisi
 
             // Web API yolları
             config.MapHttpAttributeRoutes();

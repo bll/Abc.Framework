@@ -46,12 +46,12 @@ namespace DevFramework.Norhwind.Business.Concrate.Managers
         // [LogAspect(typeof(DatabaseLogger))]
         // [LogAspect(typeof(FileLogger))]
         [PerformanceCounterAspect(10)]
-       // [SecuredOperation(Roles = "Admin,Editor,Student")]
+        [SecuredOperation(Roles = "Admin,Editor,Student")]
         public List<Product> GetAll()
         {
             //return _productDal.GetList();
 
-           // var product = AutoMapperHelper.MapToSameTypeList(_productDal.GetList());
+            // var product = AutoMapperHelper.MapToSameTypeList(_productDal.GetList());
             var product = _mapper.Map<List<Product>>(_productDal.GetList());
             return product;
         }
