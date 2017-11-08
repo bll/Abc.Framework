@@ -14,6 +14,7 @@ using DevFramework.Core.Aspects.Postsharp.TransactionAspect;
 using DevFramework.Core.Aspects.Postsharp.ValidationAspect;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Logger;
+using DevFramework.Core.Utilities.Mappings;
 using DevFramework.Norhwind.Business.ValidationRules.FluentValidation;
 using DevFramework.Norhwind.Entities.Concrete;
 using DevFramework.Norhwind.DataAccess.Abstract;
@@ -45,8 +46,12 @@ namespace DevFramework.Norhwind.Business.Concrate.Managers
        // [SecuredOperation(Roles = "Admin,Editor,Student")]
         public List<Product> GetAll()
         {
-            return _productDal.GetList();
+            //return _productDal.GetList();
+
+            var product = AutoMapperHelper.MapToSameTypeList(_productDal.GetList());
+            return product;
         }
+
 
         public Product GetById(int id)
         {
