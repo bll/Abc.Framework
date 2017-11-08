@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using DevFramework.Core.Aspects.Postsharp;
 using DevFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using DevFramework.Core.Aspects.Postsharp.CacheAspect;
@@ -26,10 +27,12 @@ namespace DevFramework.Norhwind.Business.Concrate.Managers
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
+        private readonly IMapper _mapper;
 
-        public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal, IMapper mapper)
         {
             _productDal = productDal;
+            _mapper = mapper;
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
@@ -48,7 +51,8 @@ namespace DevFramework.Norhwind.Business.Concrate.Managers
         {
             //return _productDal.GetList();
 
-            var product = AutoMapperHelper.MapToSameTypeList(_productDal.GetList());
+           // var product = AutoMapperHelper.MapToSameTypeList(_productDal.GetList());
+            var product = _mapper.Map<List<Product>>(_productDal.GetList());
             return product;
         }
 

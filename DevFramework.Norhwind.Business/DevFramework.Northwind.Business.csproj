@@ -66,8 +66,10 @@
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrate\Managers\ProductManager.cs" />
     <Compile Include="Concrate\Managers\UserManager.cs" />
+    <Compile Include="DependencyResolves\Ninject\AutoMapperModule.cs" />
     <Compile Include="DependencyResolves\Ninject\BusinessModule.cs" />
     <Compile Include="DependencyResolves\Ninject\ValidationModule.cs" />
+    <Compile Include="Mappings\AutoMapper\Profiles\BusinessProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\FluentValidation\ProductValidator.cs" />
   </ItemGroup>

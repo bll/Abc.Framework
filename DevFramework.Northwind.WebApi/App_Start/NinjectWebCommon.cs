@@ -67,8 +67,8 @@ namespace DevFramework.Northwind.WebApi.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            //BusinessModule sınıfını kullandım.
-            kernel.Load(new BusinessModule());
+            //BusinessModule sınıfını ve AutoMapperModule sınıfını kullandım.
+            kernel.Load(new BusinessModule(),new AutoMapperModule());
         }
     }
 }
