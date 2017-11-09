@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Core", "DevFramework.Core\DevFramework.Core.csproj", "{9F136AE9-E0C3-4A0E-80E8-D083FAD71E14}"
 EndProject
@@ -42,6 +42,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DevFramework.Northwind.WcfS
 		SlnRelativePath = "DevFramework.Northwind.WcfService\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.MvcAngularUI", "DevFramework.Northwind.MvcAngularUI\DevFramework.Northwind.MvcAngularUI.csproj", "{CA2B8C1C-DB50-44AC-BAFD-BFA9A8090360}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,8 +91,15 @@ Global
 		{2915AFA8-60A9-4827-A8C6-86EC1D103217}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2915AFA8-60A9-4827-A8C6-86EC1D103217}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{2915AFA8-60A9-4827-A8C6-86EC1D103217}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CA2B8C1C-DB50-44AC-BAFD-BFA9A8090360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA2B8C1C-DB50-44AC-BAFD-BFA9A8090360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA2B8C1C-DB50-44AC-BAFD-BFA9A8090360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA2B8C1C-DB50-44AC-BAFD-BFA9A8090360}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29A353C5-8311-4C96-9E82-CDD8D6135B3D}
 	EndGlobalSection
 EndGlobal
